@@ -3,7 +3,6 @@ import vectorImg from './images/Vector.svg'
 
 function Dropdown({ options, selected, setSelected }) {
 	const [isActive, setIsActive] = useState(false)
-
 	return (
 		<div className='dropdown'>
 			<div className='dropdown-btn' onClick={() => setIsActive(!isActive)}>
@@ -12,7 +11,7 @@ function Dropdown({ options, selected, setSelected }) {
 			</div>
 
 			{isActive && (
-				<div className='dropdown-content'>
+				<div className='dropdown-content' >
 					{options.map((option) => (
 						<div
 							key={option.id}

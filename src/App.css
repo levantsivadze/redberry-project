@@ -185,6 +185,8 @@
 	color: #ffffff;
 }
 
+/* Skills PAGE */
+
 /*DropDown Classes */
 .dropdown {
 	position: absolute;
@@ -252,8 +254,7 @@
 
 	padding-left: 57px;
 	padding-top: 2px;
-	margin-bottom:10px;
-	
+	margin-bottom: 10px;
 
 	font-family: Montserrat;
 	font-style: italic;
@@ -267,3 +268,58 @@
 	border: 1px solid #525557;
 	box-sizing: border-box;
 }
+
+.skills-btn {
+	position: absolute;
+	width: 201px;
+	height: 32px;
+	left: 456.1px;
+	top: 534.14px;
+
+	font-family: Montserrat;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 12px;
+	line-height: 15px;
+	border: none;
+
+	background: #fe3b1f;
+	color: #ffffff;
+}
+
+/* Skill styling */
+
+.skill-container {
+	position: absolute;
+	width: 447px;
+	height: 48px;
+	left: 203px;
+	top: 615px;
+
+	background: #ffffff;
+	/* Primary Stroke */
+
+	border: 1px solid #525557;
+	box-sizing: border-box;
+
+	display:flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.skill-container span {
+
+	padding-left:15px;
+	font-family: Montserrat;
+	font-style: italic;
+	font-weight: normal;
+	font-size: 14px;
+	line-height: 17px;
+
+	color: #000000;
+}
+
+.skill-container img {
+	padding-right: 10px;
+}
+
