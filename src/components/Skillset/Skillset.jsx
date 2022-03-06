@@ -7,7 +7,7 @@ import Skill from './Skill'
 function Skillset({ formData, setFormData }) {
 	const [skillOptions, setSkillOptions] = useState([])
 	const [experienceInput, setExperienceInput] = useState('')
-	const [skillsList, setSkillsList] = useState([])
+	const [skillsList, setSkillsList] = useState(formData.skills)
 
 	const [selectedOption, setSelectedOption] = useState({
 		id: 0,
@@ -22,6 +22,11 @@ function Skillset({ formData, setFormData }) {
 				setSkillOptions(fetchedSkills)
 			})
 	}, [])
+
+	useEffect(() => {
+		console.log(`useEffect formattedSkills`)
+		setFormData({ ...formData, skills: skillsList })
+	}, [skillsList])
 
 	const experienceInputHandler = (e) => {
 		setExperienceInput(e.target.value)
@@ -39,7 +44,7 @@ function Skillset({ formData, setFormData }) {
 
 			if (skillsList) {
 				if (!skillsList.find((skill) => skill.id === selectedOption.id)) {
-					setSkillsList([...skillsList, container])
+					setSkillsList((prevList) => [...prevList, container])
 				} else {
 					console.log(`Skill ${selectedOption.title} was already added`)
 				}
@@ -49,7 +54,14 @@ function Skillset({ formData, setFormData }) {
 		}
 	}
 
+	const removeSkillHandler = (id) => {
+		let updatedList = skillsList.filter((skill) => skill.id !== id)
+		console.log(`filteredToRemove`, updatedList)
+    setSkillsList(updatedList)
+	}
+
 	console.log(skillOptions)
+	console.log('FormData: ', formData)
 	console.log(`Selected Skill:`, selectedOption)
 	console.log(`ExpInput: `, experienceInput)
 	console.log(`savedSkills List: `, skillsList)
@@ -72,11 +84,12 @@ function Skillset({ formData, setFormData }) {
 			<button type='submit' className='skills-btn' onClick={addSkillsHandler}>
 				Add Programming Language
 			</button>
-
-			{skillsList &&
-				skillsList.map((skill) => (
-					<Skill key={skill.id} title={skill.title} years={skill.experience} />
-				))}
+			<div className='skills-wrapper'>
+				{skillsList &&
+					skillsList.map((skill) => (
+						<Skill key={skill.id} skill={skill} onRemove={removeSkillHandler} />
+					))}
+			</div>
 		</form>
 	)
 }

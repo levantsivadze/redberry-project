@@ -12,7 +12,8 @@ function Form() {
 		firstName: '',
 		lastName: '',
 		email: '',
-		phoneNumber: ''
+		phoneNumber: '',
+		skills:[]
 	})
 
 	const formTitles = [

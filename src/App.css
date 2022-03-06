@@ -47,19 +47,6 @@
 	border-radius: 50px;
 }
 
-.fetch-btn {
-	margin: 20px auto;
-	padding: 20px 70px;
-	color: white;
-	font-family: Montserrat;
-	font-style: normal;
-	font-weight: normal;
-	font-size: 24px;
-	line-height: 29px;
-
-	background: #fe3b1f;
-	border-radius: 50px;
-}
 .landing-body .applications-link {
 	margin: 20px auto;
 	font-family: Montserrat;
@@ -103,6 +90,12 @@
 	text-align: center;
 	/* Redberry Red */
 	color: #fe3b1f;
+}
+
+.footer {
+	position:absolute;
+	top: 900px;
+	left: 23%;
 }
 
 .personal-container {
@@ -190,7 +183,7 @@
 /*DropDown Classes */
 .dropdown {
 	position: absolute;
-	width: 455px;
+	width: 457px;
 	left: 200px;
 	top: 366px;
 
@@ -287,29 +280,41 @@
 	color: #ffffff;
 }
 
+.skills-wrapper {
+	position: absolute;
+	top: 615px;
+	left: 203px;
+	width: 455px;
+	height: 250px;
+
+	overflow-y: scroll;
+	/* border: 1px solid #333; */
+	transition: height 200ms;
+}
+
+.skill-wrapper::-webkit-scrollbar {
+	display: none;
+}
 /* Skill styling */
 
 .skill-container {
-	position: absolute;
 	width: 447px;
 	height: 48px;
-	left: 203px;
-	top: 615px;
 
+	margin-bottom: 17px;
 	background: #ffffff;
-	/* Primary Stroke */
 
+	transition: 0.5s;
 	border: 1px solid #525557;
 	box-sizing: border-box;
 
-	display:flex;
+	display: flex;
 	align-items: center;
 	justify-content: space-between;
 }
 
 .skill-container span {
-
-	padding-left:15px;
+	padding-left: 15px;
 	font-family: Montserrat;
 	font-style: italic;
 	font-weight: normal;
@@ -319,7 +324,6 @@
 	color: #000000;
 }
 
-.skill-container img {
+.skill-container input {
 	padding-right: 10px;
 }
-
