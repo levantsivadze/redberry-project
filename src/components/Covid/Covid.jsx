@@ -3,63 +3,60 @@ import React, { useState, useEffect } from 'react'
 import calendarIcon from './images/calendar.svg'
 
 function Covid({ formData, setFormData }) {
-	const [preferenceRadioBtn, setPreferenceRadioBtn] = useState(
-		formData.work_preference
-	)
-	const [covidRadioBtn, setCovidRadioBtn] = useState(formData.had_covid)
-	const [vaccinationRadioBtn, setVaccinationRadioBtn] = useState(
-		formData.vaccinated
-	)
-	const [covidDate, setCovidDate] = useState(formData.had_covid_at)
-	const [vaccinationDate, setVaccinationDate] = useState(formData.vaccinated_at)
+	
 
 	const preferences = ['from_sairme_office', 'from_home', 'hybrid']
 
 	console.log(`Covid.. formData`, formData)
 
 	const onPreferenceChange = (e) => {
-		setPreferenceRadioBtn(e.target.value)
+		setFormData({ ...formData, work_preference: e.target.value })
 	}
-
 	const onCovidDateChange = (e) => {
-		console.log(e.target.value)
-		setCovidDate(e.target.value)
+		setFormData({ ...formData, had_covid_at: e.target.value })
 	}
-
 	const onVaccinationDateChange = (e) => {
-		setVaccinationDate(e.target.value)
+		setFormData({ ...formData, vaccinated_at: e.target.value })
 	}
+ // 'checked'  Handlers
+  const isPreferenceSelected = (value) => formData.work_preference === value
+	const isContactRadioSelected = (value) => formData.had_covid === value
+	const isVaccinationRadioSelected = (value) => formData.vaccinated === value
+  
 
 	//if errorCode is 0, covid date is missing, if errorCode=1 vaccinationDate is missing
-	const datesValidation = () => {
-		let errorCode
-		if (covidRadioBtn && covidDate.trim() === '') {
-			errorCode = 0
-		} else if (vaccinationRadioBtn && vaccinationDate.trim() === '') {
-			errorCode = 1
-		}
-		return errorCode
-	}
+	// const datesValidation = () => {
+	// 	let errorCode
+	// 	if (covidRadioBtn && covidDate.trim() === '') {
+	// 		errorCode = 0
+	// 	} else if (vaccinationRadioBtn && vaccinationDate.trim() === '') {
+	// 		errorCode = 1
+	// 	}
+	// 	return errorCode
+	// }
 
-  //save to form data every change
-	useEffect(() => {
-		console.log(`useEffect`)
-		console.log(datesValidation())
-		setFormData({
-			...formData,
-			work_preference: preferenceRadioBtn,
-			had_covid: covidRadioBtn,
-			had_covid_at: covidDate,
-			vaccinated: vaccinationRadioBtn,
-			vaccinated_at: vaccinationDate
-		})
-	}, [covidRadioBtn, covidDate, vaccinationRadioBtn, vaccinationDate, preferenceRadioBtn])
+	//save every change to formData
+	// useEffect(() => {
+	// 	console.log(`useEffect`)
+	// 	console.log(datesValidation())
+	// 	setFormData({
+	// 		...formData,
+	// 		work_preference: preferenceRadioBtn,
+	// 		had_covid: covidRadioBtn,
+	// 		had_covid_at: covidDate,
+	// 		vaccinated: vaccinationRadioBtn,
+	// 		vaccinated_at: vaccinationDate
+	// 	})
+	// }, [
+	// 	covidRadioBtn,
+	// 	covidDate,
+	// 	vaccinationRadioBtn,
+	// 	vaccinationDate,
+	// 	preferenceRadioBtn
+	// ])
 
 	// 'checked' radio button validators
-	const isPreferenceSelected = (value) => preferenceRadioBtn === value
-	const isContactRadioSelected = (value) => covidRadioBtn === value
-	const isVaccinationRadioSelected = (value) => vaccinationRadioBtn === value
-
+	
 	return (
 		<div className='covid-container'>
 			<div className='covid-question-container'>
@@ -107,7 +104,7 @@ function Covid({ formData, setFormData }) {
 						name='contact'
 						value={true}
 						checked={isContactRadioSelected(true)}
-						onChange={() => setCovidRadioBtn(true)}
+						onChange={() => setFormData({ ...formData, had_covid: true })}
 					/>
 					Yes
 				</label>
@@ -118,20 +115,20 @@ function Covid({ formData, setFormData }) {
 						name='contact'
 						value={false}
 						checked={isContactRadioSelected(false)}
-						onChange={() => setCovidRadioBtn(false)}
+						onChange={() => setFormData({ ...formData, had_covid: false })}
 					/>
 					No
 				</label>
 			</div>
 
-			{covidRadioBtn && (
+			{formData.had_covid && (
 				<div className='covid-question-container'>
 					<span>When?</span>
 					<div className='covid-date-input-container'>
 						<input
 							className='covid-input-date'
 							type='text'
-							value={covidDate}
+							value={formData.had_covid_at}
 							onChange={onCovidDateChange}
 							onFocus={(e) => (e.target.type = 'date')}
 							onBlur={(e) => (e.target.type = 'text')}
@@ -151,7 +148,7 @@ function Covid({ formData, setFormData }) {
 						type='radio'
 						value={true}
 						checked={isVaccinationRadioSelected(true)}
-						onChange={() => setVaccinationRadioBtn(true)}
+						onChange={() => setFormData({ ...formData, vaccinated: true })}
 						name='vaccination'
 					/>
 					Yes
@@ -162,21 +159,21 @@ function Covid({ formData, setFormData }) {
 						type='radio'
 						value={false}
 						checked={isVaccinationRadioSelected(false)}
-						onChange={() => setVaccinationRadioBtn(false)}
+						onChange={() => setFormData({ ...formData, vaccinated: false })}
 						name='vaccination'
 					/>
 					No
 				</label>
 			</div>
 
-			{vaccinationRadioBtn && (
+			{formData.vaccinated && (
 				<div className='covid-question-container'>
 					<span>When did you get your last covid vaccine?</span>
 					<div className='covid-date-input-container'>
 						<input
 							className='covid-input-date'
 							type='text'
-							value={vaccinationDate}
+							value={formData.vaccinated_at}
 							onChange={onVaccinationDateChange}
 							onFocus={(e) => (e.target.type = 'date')}
 							onBlur={(e) => (e.target.type = 'text')}

@@ -3,6 +3,7 @@ import { resources } from '../constants'
 import Covid from './Covid/Covid'
 import pagImg from './images/Next.svg'
 import Insights from './Insights'
+import Pagination from './Pagination/Pagination'
 import Personal from './Personal/Personal'
 import Skillset from './Skillset/Skillset'
 
@@ -13,13 +14,12 @@ function Form() {
 		lastName: '',
 		email: '',
 		phoneNumber: '',
-		skills:[],
+		skills: [],
 		work_preference: 'from_home',
 		had_covid: false,
-		had_covid_at: "",
+		had_covid_at: '',
 		vaccinated: false,
-		vaccinated_at: "",
-		
+		vaccinated_at: ''
 	})
 
 	const formTitles = [
@@ -42,16 +42,16 @@ function Form() {
 		resources.INSIGHTS.ABOUT_DESCRIPTION
 	]
 
-	console.log(formData);
+	console.log(formData)
 	const PageDisplay = () => {
 		if (page === 0) {
-			return <Personal formData={formData} setFormData={setFormData}/>
+			return <Personal formData={formData} setFormData={setFormData} />
 		} else if (page === 1) {
-			return <Skillset formData={formData} setFormData={setFormData}/>
+			return <Skillset formData={formData} setFormData={setFormData} />
 		} else if (page === 2) {
-			return <Covid formData={formData} setFormData={setFormData}/>
+			return <Covid formData={formData} setFormData={setFormData} />
 		} else {
-			return <Insights />
+			return <Insights formData={formData} setFormData={setFormData}/>
 		}
 	}
 
@@ -63,21 +63,7 @@ function Form() {
 				</div>
 				<div className='body'>{PageDisplay()}</div>
 				<div className='footer'>
-					<input
-						type='image'
-						alt='Previous Button'
-						style={{ transform: 'rotate(-180deg)' }}
-						src={pagImg}
-						disabled={page === 0}
-						onClick={() => setPage((currPage) => currPage - 1)}
-					/>
-					<input
-						type='image'
-						alt='Next Button'
-						src={pagImg}
-						disabled={page === formTitles.length - 1}
-						onClick={() => setPage((currPage) => currPage + 1)}
-					/>
+					<Pagination page={page} setPage={setPage} formTitles={formTitles} />
 				</div>
 			</div>
 			<div className='about'>
