@@ -13,7 +13,13 @@ function Form() {
 		lastName: '',
 		email: '',
 		phoneNumber: '',
-		skills:[]
+		skills:[],
+		work_preference: 'from_home',
+		had_covid: false,
+		had_covid_at: "",
+		vaccinated: false,
+		vaccinated_at: "",
+		
 	})
 
 	const formTitles = [

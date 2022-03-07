@@ -23,7 +23,7 @@ function Personal({ formData, setFormData }) {
 	const lastNameHandler = (e) => {
 		let input = e.target.value
 
-		if (input.length > 2 && input.trim() !== '') {
+		if (input.length < 3 && input.trim() !== '') {
 			setErrorStatus({ ...errorStatus, lastNameError: true })
 		} else {
 			setErrorStatus({ ...errorStatus, lastNameError: false })
