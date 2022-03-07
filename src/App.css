@@ -93,8 +93,8 @@
 }
 
 .footer {
-	position:absolute;
-	top: 900px;
+	position: absolute;
+	top: 1000px;
 	left: 23%;
 }
 
@@ -327,3 +327,84 @@
 .skill-container input {
 	padding-right: 10px;
 }
+
+/* Covid Page */
+
+.covid-container {
+	position: absolute;
+	width: 645px;
+	left: 166px;
+	top: 250px;
+
+	display: flex;
+	flex-direction: column;
+}
+
+.covid-container .covid-question-container {
+	width: 645px;
+	height: 120px;
+	margin-bottom: 20px;
+
+	font-family: Montserrat;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 18px;
+	line-height: 22px;
+
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+}
+
+.covid-question-container span {
+	display: block;
+	width: 645px;
+	height: 52px;
+
+	text-align: left;
+}
+
+.covid-question-container label {
+	font-size: 14px;
+	line-height: 17px;
+}
+
+.covid-question-container .covid-date-input-container {
+	width: 455px;
+	height: 50px;
+	background: #ffffff;
+
+	border: 1px solid #525557;
+	box-sizing: border-box;
+	display: flex;
+	justify-content: space-between;
+}
+
+.covid-date-input-container .covid-input-date {
+	/* width: 150px; */
+	height: 24px;
+	margin-top: 12px;
+	margin-left: 57px;
+	font-family: Montserrat;
+	font-style: italic;
+	font-weight: normal;
+	border: none;
+	font-size: 14px;
+	line-height: 17px;
+}
+
+.covid-date-input-container img {
+	margin-right: 16px;
+}
+
+.covid-question-container .covid-input-date {
+	/* padding-right: 40px; */
+}
+
+/* input[type='date']::-webkit-calendar-picker-indicator {
+	color: rgba(0, 0, 0, 0);
+	display:block;
+	width: 16px;
+	height: 18px;
+	background: url('./components/Covid/images/calendar.svg');
+} */

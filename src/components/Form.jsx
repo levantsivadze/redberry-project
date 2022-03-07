@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { resources } from '../constants'
-import Covid from './Covid'
+import Covid from './Covid/Covid'
 import pagImg from './images/Next.svg'
 import Insights from './Insights'
 import Personal from './Personal/Personal'
