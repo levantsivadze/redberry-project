@@ -10,10 +10,10 @@ import Skillset from './Skillset/Skillset'
 function Form() {
 	const [page, setPage] = useState(0)
 	const [formData, setFormData] = useState({
-		firstName: '',
-		lastName: '',
+		first_name: '',
+		last_name: '',
 		email: '',
-		phoneNumber: '',
+		phone: '',
 		skills: [],
 		work_preference: 'from_home',
 		had_covid: false,
@@ -45,13 +45,45 @@ function Form() {
 	console.log(formData)
 	const PageDisplay = () => {
 		if (page === 0) {
-			return <Personal formData={formData} setFormData={setFormData} />
+			return (
+				<Personal
+					formData={formData}
+					setFormData={setFormData}
+					page={page}
+					setPage={setPage}
+					formTitles={formTitles}
+				/>
+			)
 		} else if (page === 1) {
-			return <Skillset formData={formData} setFormData={setFormData} />
+			return (
+				<Skillset
+					formData={formData}
+					setFormData={setFormData}
+					page={page}
+					setPage={setPage}
+					formTitles={formTitles}
+				/>
+			)
 		} else if (page === 2) {
-			return <Covid formData={formData} setFormData={setFormData} />
+			return (
+				<Covid
+					formData={formData}
+					setFormData={setFormData}
+					page={page}
+					setPage={setPage}
+					formTitles={formTitles}
+				/>
+			)
 		} else {
-			return <Insights formData={formData} setFormData={setFormData}/>
+			return (
+				<Insights
+					formData={formData}
+					setFormData={setFormData}
+					page={page}
+					setPage={setPage}
+					formTitles={formTitles}
+				/>
+			)
 		}
 	}
 
@@ -62,9 +94,7 @@ function Form() {
 					<h1>{formTitles[page]}</h1>
 				</div>
 				<div className='body'>{PageDisplay()}</div>
-				<div className='footer'>
-					<Pagination page={page} setPage={setPage} formTitles={formTitles} />
-				</div>
+				{/* <Pagination page={page} setPage={setPage} formTitles={formTitles} /> */}
 			</div>
 			<div className='about'>
 				<div className='about-container'>
