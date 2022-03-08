@@ -12,8 +12,6 @@ export const validateOnSubmit = (
 		setErrorStatus({ ...errorStatus, lastNameIsValid: false })
 	} else if (email.trim() === '') {
 		setErrorStatus({ ...errorStatus, emailIsValid: false })
-	} else if (phone.trim() === '') {
-		setErrorStatus({ ...errorStatus, phoneNumberIsValid: false })
 	} else setPage((currPage) => currPage + 1)
 }
 

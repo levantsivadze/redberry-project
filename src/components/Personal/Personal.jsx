@@ -57,15 +57,6 @@ function Personal({ page, setPage, formTitles, formData, setFormData }) {
 	const emailHandler = (e) => {
 		let input = e.target.value
 
-		// if (
-		// 	!input.toLowerCase().match(RegexConst.VALIDATE_EMAIL) ||
-		// 	input.trim() === ''
-		// ) {
-		// 	setErrorStatus({ ...errorStatus, emailIsValid: false })
-		// } else {
-		// 	setErrorStatus({ ...errorStatus, emailIsValid: true })
-		// }
-
 		const validate =
 			!input.toLowerCase().match(RegexConst.VALIDATE_EMAIL) ||
 			input.trim() === ''

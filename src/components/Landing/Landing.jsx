@@ -1,9 +1,12 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import rocketman from './images/rocketman.png'
 
+
+
 function Landing() {
 	const navigate = useNavigate()
+	
 	return (
 		<div className='landing-container'>
 			<div className='landing-body'>

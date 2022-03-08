@@ -4,10 +4,13 @@ import Covid from './Covid/Covid'
 import Devtalk from './Devtalk'
 import Personal from './Personal/Personal'
 import Skillset from './Skillset/Skillset'
+import FinalPage from './FinalPage/FinalPage'
+import { Token } from '../constants'
 
 function Form() {
 	const [page, setPage] = useState(0)
 	const [formData, setFormData] = useState({
+		token: Token,
 		first_name: '',
 		last_name: '',
 		email: '',
@@ -75,7 +78,7 @@ function Form() {
 					formTitles={formTitles}
 				/>
 			)
-		} else {
+		} else if (page === 3) {
 			return (
 				<Devtalk
 					formData={formData}
@@ -83,6 +86,15 @@ function Form() {
 					page={page}
 					setPage={setPage}
 					formTitles={formTitles}
+				/>
+			)
+		} else {
+			return (
+				<FinalPage
+					formData={formData}
+					setFormData={setFormData}
+					page={page}
+					setPage={setPage}
 				/>
 			)
 		}

@@ -502,3 +502,99 @@
 	border: 1px solid #525557;
 	box-sizing: border-box;
 }
+.devtalk-question-container .error-text {
+	width: 460px;
+	height: 32px;
+	margin-top: 5px;
+
+	color: #fe3b1f;
+	font-family: Montserrat;
+	font-style: italic;
+	font-weight: normal;
+	font-size: 16px;
+	line-height: 13px;
+	text-align: left;
+}
+
+/* Final Page */
+
+.submit-page-container {
+	width: 1920px !important;
+	height: 1080px;
+
+	background-color: black;
+}
+
+.submit-page-container .submit-btn {
+	position: absolute;
+	width: 395px;
+	height: 79px;
+	left: 758px;
+	top: 458px;
+
+	font-family: Montserrat;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 36px;
+	line-height: 44px;
+	color: #fff;
+
+	cursor: pointer;
+
+	background: #fe3b1f;
+	border-radius: 50px;
+}
+
+.submit-page-container .back-btn {
+	position: absolute;
+	width: 190px;
+	height: 50px;
+	left: 861px;
+	top: 572px;
+
+	font-family: Montserrat;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 28px;
+	line-height: 34px;
+
+	background-color: transparent;
+	background-repeat: no-repeat;
+	border: none;
+	cursor: pointer;
+	overflow: hidden;
+	outline: none;
+
+	text-decoration-line: underline;
+
+	color: #ffffff;
+}
+
+
+/* Thanks Page */
+
+.thanks-page-container {
+	width: 1920px !important;
+	height: 1080px;
+
+	background-color: black;
+}
+
+.thanks-page-container p {
+	position: absolute;
+width: 1066px;
+height: 191px;
+left: 427px;
+top: 444px;
+
+font-family: Rowdies;
+font-style: normal;
+font-weight: normal;
+font-size: 96px;
+line-height: 119px;
+
+
+/* Redberry Red */
+
+color: #FE3B1F;
+}

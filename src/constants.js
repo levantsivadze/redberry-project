@@ -23,5 +23,7 @@ export const resources = {
 
 export const RegexConst = {
 	VALIDATE_EMAIL: /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/,
-	VALIDATE_PHONE_NUMBER: /\+995\s5[0-9_ ]{8}/
+	VALIDATE_PHONE_NUMBER: /^(?:\+995\s5[0-9_ ]{8}|)?$/
 }
+
+export const Token = '58aba00d-2d74-44ca-9a1c-38f24a2c657f'

@@ -23,7 +23,7 @@ function Pagination({ page, setPage, formTitles, nextPageHandler }) {
 				type='image'
 				alt='Next Button'
 				src={pagImg}
-				disabled={page === formTitles.length - 1}
+				disabled={page === formTitles.length}
 				onClick={
 					nextPageHandler
 						? nextPageHandler
