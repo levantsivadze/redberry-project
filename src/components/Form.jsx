@@ -1,9 +1,7 @@
 import React, { useState } from 'react'
 import { resources } from '../constants'
 import Covid from './Covid/Covid'
-import pagImg from './images/Next.svg'
-import Insights from './Insights'
-import Pagination from './Pagination/Pagination'
+import Devtalk from './Devtalk'
 import Personal from './Personal/Personal'
 import Skillset from './Skillset/Skillset'
 
@@ -19,7 +17,10 @@ function Form() {
 		had_covid: false,
 		had_covid_at: '',
 		vaccinated: false,
-		vaccinated_at: ''
+		vaccinated_at: '',
+		will_organize_devtalk: false,
+		devtalk_topic: '',
+		something_special: ''
 	})
 
 	const formTitles = [
@@ -76,7 +77,7 @@ function Form() {
 			)
 		} else {
 			return (
-				<Insights
+				<Devtalk
 					formData={formData}
 					setFormData={setFormData}
 					page={page}

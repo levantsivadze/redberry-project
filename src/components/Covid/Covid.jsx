@@ -13,8 +13,10 @@ function Covid({ formData, setFormData, page, setPage, formTitles }) {
 
 	const preferences = ['from_sairme_office', 'from_home', 'hybrid']
 
-	const [errorMessage, setErrorMessage] = useState('')
-
+	const [errorMessage, setErrorMessage] = useState({
+		covid: '',
+		vaccine: ''
+	})
 
 	console.log(`Covid.. formData`, formData)
 
@@ -22,9 +24,11 @@ function Covid({ formData, setFormData, page, setPage, formTitles }) {
 		setFormData({ ...formData, work_preference: e.target.value })
 	}
 	const onCovidDateChange = (e) => {
+		setErrorMessage('')
 		setFormData({ ...formData, had_covid_at: e.target.value })
 	}
 	const onVaccineDateChange = (e) => {
+		setErrorMessage('')
 		setFormData({ ...formData, vaccinated_at: e.target.value })
 	}
 
@@ -35,7 +39,22 @@ function Covid({ formData, setFormData, page, setPage, formTitles }) {
 
 	const onSubmitHandler = (e) => {
 		e.preventDefault()
+		if (had_covid && !had_covid_at) {
+			setErrorMessage({
+				...errorMessage,
+				covid: 'Date for covid contact is missing'
+			})
+		} else if (vaccinated && !vaccinated_at) {
+			setErrorMessage({
+				...errorMessage,
+				vaccine: 'Vaccination date is missing. Please specify the date'
+			})
+		} else {
+			setErrorMessage('')
+			setPage((currPage) => currPage + 1)
+		}
 	}
+
 	return (
 		<>
 			<form className='covid-container'>
@@ -95,7 +114,9 @@ function Covid({ formData, setFormData, page, setPage, formTitles }) {
 							name='contact'
 							value={false}
 							checked={isCovidSelected(false)}
-							onChange={() => setFormData({ ...formData, had_covid: false })}
+							onChange={() =>
+								setFormData({ ...formData, had_covid: false, had_covid_at: '' })
+							}
 						/>
 						No
 					</label>
@@ -117,7 +138,9 @@ function Covid({ formData, setFormData, page, setPage, formTitles }) {
 							/>
 							<img src={calendarIcon} alt='calendar icon' />
 						</div>
-						{!errorMessage && <span className="error-text">Some Error message here</span>}
+						{errorMessage.covid && (
+							<span className='error-text'>{errorMessage.covid}</span>
+						)}
 					</div>
 				)}
 
@@ -140,7 +163,13 @@ function Covid({ formData, setFormData, page, setPage, formTitles }) {
 							type='radio'
 							value={false}
 							checked={isVaccineSelected(false)}
-							onChange={() => setFormData({ ...formData, vaccinated: false })}
+							onChange={() =>
+								setFormData({
+									...formData,
+									vaccinated: false,
+									vaccinated_at: ''
+								})
+							}
 							name='vaccination'
 						/>
 						No
@@ -163,7 +192,9 @@ function Covid({ formData, setFormData, page, setPage, formTitles }) {
 							/>
 							<img src={calendarIcon} alt='calendar icon' />
 						</div>
-						{!errorMessage && <span className="error-text">Some Error message here</span>}
+						{errorMessage.vaccine && (
+							<span className='error-text'>{errorMessage.vaccine}</span>
+						)}
 					</div>
 				)}
 			</form>
