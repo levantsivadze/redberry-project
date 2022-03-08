@@ -110,7 +110,7 @@ function Skillset({ formData, setFormData, page, setPage, formTitles }) {
 				page={page}
 				setPage={setPage}
 				formTitles={formTitles}
-				nextPageHandler={onSubmitHandler}
+				// nextPageHandler={onSubmitHandler}
 			/>
 		</form>
 	)

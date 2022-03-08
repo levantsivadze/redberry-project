@@ -141,7 +141,7 @@ function Personal({ page, setPage, formTitles, formData, setFormData }) {
 				setPage={setPage}
 				formTitles={formTitles}
 				pageIsValid={pageIsValid}
-				nextPageHandler={onSubmitHandler}
+				// nextPageHandler={onSubmitHandler}
 			/>
 		</>
 	)

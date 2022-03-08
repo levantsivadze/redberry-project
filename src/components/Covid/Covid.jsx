@@ -2,8 +2,19 @@ import React, { useState, useEffect } from 'react'
 import Pagination from '../Pagination/Pagination'
 import calendarIcon from './images/calendar.svg'
 
-function Covid({ page, setPage, formTitles, formData, setFormData }) {
+function Covid({ formData, setFormData, page, setPage, formTitles }) {
+	const {
+		work_preference,
+		had_covid,
+		had_covid_at,
+		vaccinated,
+		vaccinated_at
+	} = formData
+
 	const preferences = ['from_sairme_office', 'from_home', 'hybrid']
+
+	const [errorMessage, setErrorMessage] = useState('')
+
 
 	console.log(`Covid.. formData`, formData)
 
@@ -13,47 +24,18 @@ function Covid({ page, setPage, formTitles, formData, setFormData }) {
 	const onCovidDateChange = (e) => {
 		setFormData({ ...formData, had_covid_at: e.target.value })
 	}
-	const onVaccinationDateChange = (e) => {
+	const onVaccineDateChange = (e) => {
 		setFormData({ ...formData, vaccinated_at: e.target.value })
 	}
+
 	// 'checked'  Handlers
-	const isPreferenceSelected = (value) => formData.work_preference === value
-	const isContactRadioSelected = (value) => formData.had_covid === value
-	const isVaccinationRadioSelected = (value) => formData.vaccinated === value
+	const isPreferenceSelected = (value) => work_preference === value
+	const isCovidSelected = (value) => had_covid === value
+	const isVaccineSelected = (value) => vaccinated === value
 
-	//if errorCode is 0, covid date is missing, if errorCode=1 vaccinationDate is missing
-	// const datesValidation = () => {
-	// 	let errorCode
-	// 	if (covidRadioBtn && covidDate.trim() === '') {
-	// 		errorCode = 0
-	// 	} else if (vaccinationRadioBtn && vaccinationDate.trim() === '') {
-	// 		errorCode = 1
-	// 	}
-	// 	return errorCode
-	// }
-
-	//save every change to formData
-	// useEffect(() => {
-	// 	console.log(`useEffect`)
-	// 	console.log(datesValidation())
-	// 	setFormData({
-	// 		...formData,
-	// 		work_preference: preferenceRadioBtn,
-	// 		had_covid: covidRadioBtn,
-	// 		had_covid_at: covidDate,
-	// 		vaccinated: vaccinationRadioBtn,
-	// 		vaccinated_at: vaccinationDate
-	// 	})
-	// }, [
-	// 	covidRadioBtn,
-	// 	covidDate,
-	// 	vaccinationRadioBtn,
-	// 	vaccinationDate,
-	// 	preferenceRadioBtn
-	// ])
-
-	// 'checked' radio button validators
-
+	const onSubmitHandler = (e) => {
+		e.preventDefault()
+	}
 	return (
 		<>
 			<form className='covid-container'>
@@ -101,7 +83,7 @@ function Covid({ page, setPage, formTitles, formData, setFormData }) {
 							type='radio'
 							name='contact'
 							value={true}
-							checked={isContactRadioSelected(true)}
+							checked={isCovidSelected(true)}
 							onChange={() => setFormData({ ...formData, had_covid: true })}
 						/>
 						Yes
@@ -112,21 +94,21 @@ function Covid({ page, setPage, formTitles, formData, setFormData }) {
 							type='radio'
 							name='contact'
 							value={false}
-							checked={isContactRadioSelected(false)}
+							checked={isCovidSelected(false)}
 							onChange={() => setFormData({ ...formData, had_covid: false })}
 						/>
 						No
 					</label>
 				</div>
 
-				{formData.had_covid && (
+				{had_covid && (
 					<div className='covid-question-container'>
 						<span>When?</span>
 						<div className='covid-date-input-container'>
 							<input
 								className='covid-input-date'
 								type='text'
-								value={formData.had_covid_at}
+								value={had_covid_at}
 								onChange={onCovidDateChange}
 								onFocus={(e) => (e.target.type = 'date')}
 								onBlur={(e) => (e.target.type = 'text')}
@@ -135,6 +117,7 @@ function Covid({ page, setPage, formTitles, formData, setFormData }) {
 							/>
 							<img src={calendarIcon} alt='calendar icon' />
 						</div>
+						{!errorMessage && <span className="error-text">Some Error message here</span>}
 					</div>
 				)}
 
@@ -145,7 +128,7 @@ function Covid({ page, setPage, formTitles, formData, setFormData }) {
 							className='input-radio'
 							type='radio'
 							value={true}
-							checked={isVaccinationRadioSelected(true)}
+							checked={isVaccineSelected(true)}
 							onChange={() => setFormData({ ...formData, vaccinated: true })}
 							name='vaccination'
 						/>
@@ -156,7 +139,7 @@ function Covid({ page, setPage, formTitles, formData, setFormData }) {
 							className='input-radio'
 							type='radio'
 							value={false}
-							checked={isVaccinationRadioSelected(false)}
+							checked={isVaccineSelected(false)}
 							onChange={() => setFormData({ ...formData, vaccinated: false })}
 							name='vaccination'
 						/>
@@ -164,15 +147,15 @@ function Covid({ page, setPage, formTitles, formData, setFormData }) {
 					</label>
 				</div>
 
-				{formData.vaccinated && (
+				{vaccinated && (
 					<div className='covid-question-container'>
 						<span>When did you get your last covid vaccine?</span>
 						<div className='covid-date-input-container'>
 							<input
 								className='covid-input-date'
 								type='text'
-								value={formData.vaccinated_at}
-								onChange={onVaccinationDateChange}
+								value={vaccinated_at}
+								onChange={onVaccineDateChange}
 								onFocus={(e) => (e.target.type = 'date')}
 								onBlur={(e) => (e.target.type = 'text')}
 								placeholder='Date'
@@ -180,6 +163,7 @@ function Covid({ page, setPage, formTitles, formData, setFormData }) {
 							/>
 							<img src={calendarIcon} alt='calendar icon' />
 						</div>
+						{!errorMessage && <span className="error-text">Some Error message here</span>}
 					</div>
 				)}
 			</form>
@@ -187,7 +171,7 @@ function Covid({ page, setPage, formTitles, formData, setFormData }) {
 				page={page}
 				setPage={setPage}
 				formTitles={formTitles}
-				// nextPageHandler={onSubmitHandler}
+				nextPageHandler={onSubmitHandler}
 			/>
 		</>
 	)

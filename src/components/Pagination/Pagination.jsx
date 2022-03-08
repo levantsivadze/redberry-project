@@ -24,8 +24,11 @@ function Pagination({ page, setPage, formTitles, nextPageHandler }) {
 				alt='Next Button'
 				src={pagImg}
 				disabled={page === formTitles.length - 1}
-				onClick={nextPageHandler}
-				// onClick={() => setPage((currPage) => currPage + 1)}
+				onClick={
+					nextPageHandler
+						? nextPageHandler
+						: () => setPage((currPage) => currPage + 1)
+				}
 			/>
 		</div>
 	)
