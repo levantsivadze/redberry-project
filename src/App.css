@@ -161,8 +161,6 @@
 	font-size: 64px;
 	line-height: 79px;
 
-	/* Redberry Red */
-
 	color: #fe3b1f;
 }
 .about-container p {
@@ -174,7 +172,6 @@
 	margin-top: 50px;
 	width: 707px;
 	height: 606px;
-	/* or 48px */
 
 	letter-spacing: 0.05em;
 	color: #ffffff;
@@ -258,7 +255,6 @@
 	line-height: 17px;
 
 	background: #ffffff;
-	/* Primary Stroke */
 
 	border: 1px solid #525557;
 	box-sizing: border-box;
@@ -291,9 +287,7 @@
 	width: 455px;
 	height: 250px;
 
-	overflow: hidden;
-
-	/* border: 1px solid #333; */
+	overflow-y: scroll;
 	transition: height 200ms;
 }
 
@@ -415,7 +409,6 @@
 }
 
 .covid-date-input-container .covid-input-date {
-	/* width: 150px; */
 	height: 24px;
 	margin-top: 12px;
 	margin-left: 57px;
@@ -649,7 +642,6 @@
 
 	margin-bottom: 20px;
 	cursor: pointer;
-	/* Redberry Red */
 	background: #fe3b1f;
 	display: flex;
 	justify-content: space-between;
@@ -676,7 +668,6 @@
 	height: auto;
 
 	background: #ffffff;
-	/* Redberry Red */
 
 	border: 1px solid #fe3b1f;
 	box-sizing: border-box;
@@ -919,8 +910,6 @@
 	height: 122px;
 
 	background: #ffffff;
-	/* Primary Stroke */
-
 	border: 1px solid #525557;
 	display: flex;
 	align-items: center;
