@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react'
-import axios from 'axios'
+import activeBullet from '../../../utils/images/activeBullet.png'
+import passiveBullet from '../../../utils/images/passiveBullet.png'
+
 
 function RightColumn({ listItem }) {
 	const skillTitles = [
@@ -28,8 +30,6 @@ function RightColumn({ listItem }) {
 		something_special
 	} = listItem
 
-
-
 	console.log(`skillTitles`, skillTitles)
 
 	return (
@@ -45,7 +45,39 @@ function RightColumn({ listItem }) {
 					))}
 				</div>
 			</div>
-			<div className='insights-info-container'></div>
+			<div className='insights-info-container'>
+				<h3>Insights</h3>
+				<div className='insight-sector'>
+					<h4>Would you attend Devtalks and maybe also organize your own?</h4>
+					<span>
+						<img
+							src={will_organize_devtalk ? activeBullet : passiveBullet}
+							alt='bullet'
+						/>
+						{'  '} Yes
+					</span>
+					<span>
+						<img
+							src={!will_organize_devtalk ? activeBullet : passiveBullet}
+							alt='bullet'
+						/>
+						{'  '}
+						No
+					</span>
+				</div>
+        <div className="insight-sector">
+          <h4>What would you speak about at Devtalk?</h4>
+          <div className="insight-topic-area">
+            <span>{devtalk_topic}</span>
+          </div>
+        </div>
+        <div className="insight-sector">
+          <h4>Tell us somthing special</h4>
+          <div className="insight-topic-area">
+            <span>{something_special}</span>
+          </div>
+        </div>
+			</div>
 		</div>
 	)
 }

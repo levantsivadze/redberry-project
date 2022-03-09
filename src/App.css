@@ -816,6 +816,7 @@
 	background-color: rgb(171, 210, 245);
 }
 
+/* Skillset Info Container */
 .skillset-info-container {
 	width: 447px;
 	margin-left: 50px;
@@ -859,6 +860,65 @@
 	color: #000000;
 }
 
-.skillset-item span:nth-child(2){
+.skillset-item span:nth-child(2) {
 	margin-left: 60px;
+}
+
+/* Insights Info Container */
+.insights-info-container {
+	width: 400px;
+	margin-left: 50px;
+	display: flex;
+	flex-direction: column;
+}
+.insights-info-container h3 {
+	font-family: Montserrat;
+	font-style: italic;
+	font-weight: normal;
+	font-size: 18px;
+	line-height: 22px;
+	text-align: left;
+	text-decoration-line: underline;
+
+	/* Redberry Red */
+
+	color: #fe3b1f;
+}
+
+.insights-info-container .insight-sector {
+	margin-bottom: 30px;
+	display: flex;
+	flex-direction: column;
+	text-align: left;
+}
+
+.insight-sector span {
+	margin-top: 10px;
+	align-items: center;
+}
+
+.insight-sector h4 {
+	margin-left: 0;
+	font-family: Montserrat;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 18px;
+	line-height: 22px;
+	text-align: left;
+}
+
+.insight-topic-area {
+	width: 447px;
+	height: 122px;
+
+	background: #ffffff;
+	/* Primary Stroke */
+
+	border: 1px solid #525557;
+	display: flex;
+	align-items: center;
+}
+
+.insight-topic-area span {
+	margin-left: 50px;
 }
