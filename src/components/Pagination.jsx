@@ -4,7 +4,7 @@ import emptyCircle from '../utils/images/circle-empty.svg'
 import fullCircle from '../utils/images/circle-full.svg'
 import { useNavigate } from 'react-router-dom'
 
-function Pagination({ page, setPage, formTitles, isValid, nextPageHandler }) {
+function Pagination({ page, setPage, formTitles, nextPageHandler }) {
 	const navigate = useNavigate()
 	const [skillsIsActive, setSkillsIsActive] = useState(false)
 	const [covidIsActive, setCovidIsActive] = useState(false)
@@ -23,6 +23,7 @@ function Pagination({ page, setPage, formTitles, isValid, nextPageHandler }) {
 		}
 	}, [])
 
+	 // check which button was clicked and navigate to that page accordingly
 	const onCircleClick = (e) => {
 		if (e.target.id === '0') setPage(0)
 		if (e.target.id === '1' && skillsIsActive) setPage(1)

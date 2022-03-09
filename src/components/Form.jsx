@@ -46,7 +46,7 @@ function Form() {
 		resources.INSIGHTS.ABOUT_DESCRIPTION
 	]
 
-	console.log(formData)
+	// rendering page components according to 'page' value. so every page has its value
 	const PageDisplay = () => {
 		if (page === 0) {
 			return (
@@ -107,7 +107,6 @@ function Form() {
 					<h1>{formTitles[page]}</h1>
 				</div>
 				<div className='body'>{PageDisplay()}</div>
-				{/* <Pagination page={page} setPage={setPage} formTitles={formTitles} /> */}
 			</div>
 			<div className='about'>
 				<div className='about-container'>

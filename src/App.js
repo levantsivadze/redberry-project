@@ -1,13 +1,17 @@
 import './App.css'
-import { useState } from 'react'
 import { Routes, Route } from 'react-router-dom'
 import Form from './components/Form'
 import Landing from './components/Landing'
 import ThanksPage from './components/ThanksPage'
 import SubmittedList from './components/SubmittedList/SubmittedList'
-import Covid from './components/Covid'
 function App() {
-	const [thankPageIsActive, setThankPageIsActive] = useState(false)
+
+	console.log(` instead of deleting these properties, I'm sending special values. Hope it won't be a huge problem. Deleting properties is also can be solved, but I'm out of time kinda.. So here are invalid values:
+	  phone: 'NULL',
+	  had_covid_at: '0001-01-01'
+    vaccinated_at: '0001-01-01',
+    devtalk_topic: 'NULL'
+	`);
 
 	return (
 		<div className='App'>

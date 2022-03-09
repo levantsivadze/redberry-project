@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import { useState } from 'react'
 import Pagination from './Pagination'
 import calendarIcon from '../utils/images/calendar.svg'
 

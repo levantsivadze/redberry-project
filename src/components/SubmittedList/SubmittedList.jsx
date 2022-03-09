@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react'
 import ListItem from './ListItem'
 import { Token } from '../../constants'
 import axios from 'axios'
-import ListItemContent from './ListItemContent'
 
 function SubmittedList() {
 	const [dataList, setDataList] = useState([])
@@ -26,7 +25,6 @@ function SubmittedList() {
 						))}
 				</ul>
 			</div>
-			{/* {dataList.length !== 0 && <ListItemContent itemData={dataList[1]} />} */}
 		</div>
 	)
 }

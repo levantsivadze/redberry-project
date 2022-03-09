@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import activeBullet from '../../../utils/images/activeBullet.png'
 import passiveBullet from '../../../utils/images/passiveBullet.png'
 
