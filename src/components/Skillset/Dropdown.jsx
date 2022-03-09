@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import vectorImg from './images/Vector.svg'
+import vectorImg from '../../utils/images/Vector.svg'
 
 function Dropdown({ options, selected, setSelected }) {
 	const [isActive, setIsActive] = useState(false)
@@ -11,7 +11,7 @@ function Dropdown({ options, selected, setSelected }) {
 			</div>
 
 			{isActive && (
-				<div className='dropdown-content' >
+				<div className='dropdown-content'>
 					{options.map((option) => (
 						<div
 							key={option.id}

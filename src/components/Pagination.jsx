@@ -1,14 +1,9 @@
 import React from 'react'
-import pagImg from './images/Next.svg'
-
+import pagImg from '../utils/images/Next.svg'
+import { useNavigate } from 'react-router-dom'
 function Pagination({ page, setPage, formTitles, nextPageHandler }) {
-	// const nextPageHandler = (e) => {
-	// 	if (pageIsValid) {
-	// 		setPage((currPage) => currPage + 1)
-	// 	} else {
-	// 		return
-	// 	}
-	// }
+	const navigate = useNavigate()
+
 	return (
 		<div className='footer'>
 			<input
@@ -16,8 +11,12 @@ function Pagination({ page, setPage, formTitles, nextPageHandler }) {
 				alt='Previous Button'
 				style={{ transform: 'rotate(-180deg)' }}
 				src={pagImg}
-				disabled={page === 0}
-				onClick={() => setPage((currPage) => currPage - 1)}
+				onClick={() => {
+					if (page === 0) {
+						navigate('/')
+					}
+					setPage((currPage) => currPage - 1)
+				}}
 			/>
 			<input
 				type='image'

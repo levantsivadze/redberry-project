@@ -1,5 +1,5 @@
 import React from 'react'
-import removeIcon from './images/Remove.svg'
+import removeIcon from '../../utils/images/Remove.svg'
 
 function Skill({ skill, onRemove }) {
 	return (

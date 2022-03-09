@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
-import { RegexConst } from '../../constants'
-import Pagination from '../Pagination/Pagination'
-import { validateOnSubmit, validateOnTyping } from './validation'
+import { RegexConst } from '../constants'
+import Pagination from './Pagination'
+import { validateOnSubmit, validateOnTyping } from '../utils/helpers/validation'
 
 function Personal({ page, setPage, formTitles, formData, setFormData }) {
 	const [errorStatus, setErrorStatus] = useState({
@@ -26,12 +26,6 @@ function Personal({ page, setPage, formTitles, formData, setFormData }) {
 
 	const firstNameHandler = (e) => {
 		let input = e.target.value
-
-		// if (input.length < 3 && input.trim() !== '') {
-		// 	setErrorStatus({ ...errorStatus, firstNameIsValid: false })
-		// } else {
-		// 	setErrorStatus({ ...errorStatus, firstNameIsValid: true })
-		// }
 
 		validateOnTyping(
 			input.length < 3 && input.trim() !== '',
@@ -77,6 +71,9 @@ function Personal({ page, setPage, formTitles, formData, setFormData }) {
 
 	const onSubmitHandler = (e) => {
 		e.preventDefault()
+		if (formData.phone.trim() === '') {
+			setFormData({ ...formData, phone: 'NULL' })
+		}
 		validateOnSubmit(formData, errorStatus, setErrorStatus, setPage)
 	}
 
@@ -118,7 +115,7 @@ function Personal({ page, setPage, formTitles, formData, setFormData }) {
 				<input
 					type='text'
 					placeholder='+995 5______'
-					value={formData.phone}
+					value={formData.phone === 'NULL' ? '' : formData.phone}
 					onChange={phoneNumberHandler}
 				/>
 				{!errorStatus.phoneNumberIsValid && (
@@ -132,7 +129,7 @@ function Personal({ page, setPage, formTitles, formData, setFormData }) {
 				setPage={setPage}
 				formTitles={formTitles}
 				pageIsValid={pageIsValid}
-				// nextPageHandler={onSubmitHandler}
+				nextPageHandler={onSubmitHandler}
 			/>
 		</>
 	)

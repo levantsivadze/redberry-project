@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import Pagination from '../Pagination/Pagination'
+import Pagination from '../Pagination'
 import axios from 'axios'
 import Dropdown from './Dropdown'
 import Skill from './Skill'
@@ -27,7 +27,7 @@ function Skillset({ formData, setFormData, page, setPage, formTitles }) {
 	useEffect(() => {
 		console.log(`useEffect formattedSkills`)
 		setFormData({ ...formData, skills: skillsList })
-	}, [skillsList])
+	}, [formData, setFormData, skillsList])
 
 	const experienceInputHandler = (e) => {
 		setExperienceInput(e.target.value)
@@ -64,11 +64,7 @@ function Skillset({ formData, setFormData, page, setPage, formTitles }) {
 		setSkillsList(updatedList)
 	}
 
-	console.log(skillOptions)
 	console.log('FormData: ', formData)
-	console.log(`Selected Skill:`, selectedOption)
-	console.log(`ExpInput: `, experienceInput)
-	console.log(`savedSkills List: `, skillsList)
 
 	const onSubmitHandler = (e) => {
 		e.preventDefault()
@@ -110,7 +106,7 @@ function Skillset({ formData, setFormData, page, setPage, formTitles }) {
 				page={page}
 				setPage={setPage}
 				formTitles={formTitles}
-				// nextPageHandler={onSubmitHandler}
+				nextPageHandler={onSubmitHandler}
 			/>
 		</form>
 	)

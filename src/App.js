@@ -2,11 +2,11 @@ import './App.css'
 import { useState } from 'react'
 import { Routes, Route } from 'react-router-dom'
 import Form from './components/Form'
-import Landing from './components/Landing/Landing'
-import ThanksPage from './components/ThanksPage/ThanksPage'
+import Landing from './components/Landing'
+import ThanksPage from './components/ThanksPage'
 function App() {
 		const [thankPageIsActive, setThankPageIsActive] = useState(false)
-		
+
 	return (
 		<div className='App'>
 			<Routes>

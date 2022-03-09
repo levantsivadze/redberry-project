@@ -11,7 +11,7 @@
 }
 
 .landing-container .landing-body {
-	background: url('./components/Landing/images/stars.png') no-repeat center
+	background: url('./utils/images/stars.png') no-repeat center
 		center fixed;
 	background-size: cover;
 	height: 1080px;

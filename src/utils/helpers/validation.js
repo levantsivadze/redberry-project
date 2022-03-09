@@ -4,7 +4,7 @@ export const validateOnSubmit = (
 	setErrorStatus,
 	setPage
 ) => {
-	const { first_name, last_name, email, phone } = formData
+	const { first_name, last_name, email } = formData
 
 	if (first_name.trim() === '') {
 		setErrorStatus({ ...errorStatus, firstNameIsValid: false })

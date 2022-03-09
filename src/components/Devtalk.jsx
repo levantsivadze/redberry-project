@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import Pagination from './Pagination/Pagination'
+import Pagination from './Pagination'
 
 function Devtalk({ formData, setFormData, page, setPage, formTitles }) {
 	const { will_organize_devtalk, devtalk_topic, something_special } = formData
@@ -69,7 +69,11 @@ function Devtalk({ formData, setFormData, page, setPage, formTitles }) {
 							value={false}
 							checked={isDevTalkSelected(false)}
 							onChange={() =>
-								setFormData({ ...formData, will_organize_devtalk: false })
+								setFormData({
+									...formData,
+									will_organize_devtalk: false,
+									devtalk_topic: 'NAN'
+								})
 							}
 						/>
 						No

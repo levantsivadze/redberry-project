@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
-import Pagination from '../Pagination/Pagination'
-import calendarIcon from './images/calendar.svg'
+import Pagination from './Pagination'
+import calendarIcon from '../utils/images/calendar.svg'
 
 function Covid({ formData, setFormData, page, setPage, formTitles }) {
 	const {
@@ -11,7 +11,7 @@ function Covid({ formData, setFormData, page, setPage, formTitles }) {
 		vaccinated_at
 	} = formData
 
-	const preferences = ['from_sairme_office', 'from_home', 'hybrid']
+	const preferences = ['from_office', 'from_home', 'hybrid']
 
 	const [errorMessage, setErrorMessage] = useState({
 		covid: '',
@@ -39,12 +39,12 @@ function Covid({ formData, setFormData, page, setPage, formTitles }) {
 
 	const onSubmitHandler = (e) => {
 		e.preventDefault()
-		if (had_covid && !had_covid_at) {
+		if (had_covid && had_covid_at === '0001-01-01') {
 			setErrorMessage({
 				...errorMessage,
 				covid: 'Date for covid contact is missing'
 			})
-		} else if (vaccinated && !vaccinated_at) {
+		} else if (vaccinated && vaccinated_at === '0001-01-01') {
 			setErrorMessage({
 				...errorMessage,
 				vaccine: 'Vaccination date is missing. Please specify the date'
@@ -115,7 +115,11 @@ function Covid({ formData, setFormData, page, setPage, formTitles }) {
 							value={false}
 							checked={isCovidSelected(false)}
 							onChange={() =>
-								setFormData({ ...formData, had_covid: false, had_covid_at: '' })
+								setFormData({
+									...formData,
+									had_covid: false,
+									had_covid_at: 'NAN'
+								})
 							}
 						/>
 						No
@@ -167,7 +171,7 @@ function Covid({ formData, setFormData, page, setPage, formTitles }) {
 								setFormData({
 									...formData,
 									vaccinated: false,
-									vaccinated_at: ''
+									vaccinated_at: 'NAN'
 								})
 							}
 							name='vaccination'

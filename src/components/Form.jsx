@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
 import { resources } from '../constants'
-import Covid from './Covid/Covid'
+import Covid from './Covid'
 import Devtalk from './Devtalk'
-import Personal from './Personal/Personal'
+import Personal from './Personal'
 import Skillset from './Skillset/Skillset'
-import FinalPage from './FinalPage/FinalPage'
+import FinalPage from './FinalPage'
 import { Token } from '../constants'
 
 function Form() {
@@ -14,15 +14,15 @@ function Form() {
 		first_name: '',
 		last_name: '',
 		email: '',
-		phone: '',
+		phone: 'NULL',
 		skills: [],
 		work_preference: 'from_home',
 		had_covid: false,
-		had_covid_at: '',
+		had_covid_at: '0001-01-01',
 		vaccinated: false,
-		vaccinated_at: '',
+		vaccinated_at: '0001-01-01',
 		will_organize_devtalk: false,
-		devtalk_topic: '',
+		devtalk_topic: 'NAN',
 		something_special: ''
 	})
 

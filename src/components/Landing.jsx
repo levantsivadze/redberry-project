@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import rocketman from './images/rocketman.png'
+import rocketman from '../utils/images/rocketman.png'
 
 
 

@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
-import useValidator from './useValidator'
 import { useNavigate } from 'react-router-dom'
-import ThanksPage from '../ThanksPage/ThanksPage'
+import ThanksPage from './ThanksPage'
 
 function FinalPage({ formData, setFormData, page, setPage, formTitles }) {
 	const { phone, had_covid, vaccinated, will_organize_devtalk } = formData
@@ -14,19 +13,12 @@ function FinalPage({ formData, setFormData, page, setPage, formTitles }) {
 	console.log(`formattedData`, formattedData)
 
 	useEffect(() => {
-		if (!phone) {
-			const { phone, ...cleanedData } = formData
-			setFormattedData(cleanedData)
-		} else if (!had_covid) {
-			const { had_covid_at, ...cleanedData } = formData
-			setFormattedData(cleanedData)
-		} else if (!vaccinated) {
-			const { vaccinated_at, ...cleanedData } = formData
-			setFormattedData(cleanedData)
-		} else if (!will_organize_devtalk) {
-			const { devtalk_topic, ...cleanedData } = formData
-			setFormattedData(cleanedData)
-		}
+		let formattedSkills = formData.skills.map((skill) => ({
+			id: skill.id,
+			experience: skill.experience
+		}))
+		setFormattedData({ ...formData, skills: formattedSkills })
+
 	}, [])
 
 	const submitHandler = (e) => {
@@ -34,10 +26,10 @@ function FinalPage({ formData, setFormData, page, setPage, formTitles }) {
 
 		setIsActive(true)
 
-		// axios
-		// 	.post(`https://bootcamp-2022.devtest.ge/api/application/${formData}`)
-		// 	.then((res) => console.log(res))
-		// 	.catch((err) => console.log(err))
+		axios
+			.post(`https://bootcamp-2022.devtest.ge/api/application/`, formattedData)
+			.then((res) => console.log(res))
+			.catch((err) => console.log(err))
 	}
 	return (
 		<>
