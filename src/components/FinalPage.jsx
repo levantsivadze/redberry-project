@@ -1,16 +1,12 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import axios from 'axios'
 import ThanksPage from './ThanksPage'
 
-function FinalPage({ formData, setFormData, page, setPage, formTitles }) {
-	const { phone, had_covid, vaccinated, will_organize_devtalk } = formData
+function FinalPage({ formData, setPage }) {
 	const [isActive, setIsActive] = useState(false)
-	const [formattedData, setFormattedData] = useState(formData)
 
 	console.log('Submit')
-	console.log(`formattedData`, formattedData)
-
-	
+	console.log(`formattedData`, formData)
 
 	const submitHandler = (e) => {
 		e.preventDefault()
@@ -18,7 +14,7 @@ function FinalPage({ formData, setFormData, page, setPage, formTitles }) {
 		setIsActive(true)
 
 		axios
-			.post(`https://bootcamp-2022.devtest.ge/api/application/`, formattedData)
+			.post(`https://bootcamp-2022.devtest.ge/api/application/`, formData)
 			.then((res) => console.log(res))
 			.catch((err) => console.log(err))
 	}

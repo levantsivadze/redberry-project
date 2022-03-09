@@ -2,7 +2,7 @@ export const validateOnSubmit = (
 	formData,
 	errorStatus,
 	setErrorStatus,
-	setPage
+	setPage, 
 ) => {
 	const { first_name, last_name, email } = formData
 
