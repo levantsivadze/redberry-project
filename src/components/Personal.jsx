@@ -10,7 +10,6 @@ function Personal({ page, setPage, formTitles, formData, setFormData }) {
 		emailIsValid: true,
 		phoneNumberIsValid: true
 	})
-
 	console.log(`errorStatus`, errorStatus)
 
 	let pageIsValid = false
@@ -73,7 +72,9 @@ function Personal({ page, setPage, formTitles, formData, setFormData }) {
 		e.preventDefault()
 		if (formData.phone.trim() === '') {
 			setFormData({ ...formData, phone: 'NULL' })
+			// delete formData.phone
 		}
+		console.log(`FormData with deleted phone`, formData)
 		validateOnSubmit(formData, errorStatus, setErrorStatus, setPage)
 	}
 

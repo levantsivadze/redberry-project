@@ -5,6 +5,7 @@ import Form from './components/Form'
 import Landing from './components/Landing'
 import ThanksPage from './components/ThanksPage'
 import SubmittedList from './components/SubmittedList/SubmittedList'
+import Covid from './components/Covid'
 function App() {
 	const [thankPageIsActive, setThankPageIsActive] = useState(false)
 

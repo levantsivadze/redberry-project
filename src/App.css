@@ -94,7 +94,10 @@
 .footer {
 	position: absolute;
 	top: 1000px;
-	left: 23%;
+	left: 20%;
+}
+.footer input {
+	margin-left: 5px;
 }
 
 .personal-container {
@@ -658,7 +661,13 @@
 }
 .list-item-btn img {
 	margin-right: 20px;
+
 }
+.list-item-btn .imgOpen {
+	margin-right: 20px;
+	transform: rotate(-180deg);
+}
+
 
 /* List Item Content */
 
@@ -679,7 +688,6 @@
 
 .list-item-content-container .container-left-col {
 	width: 577px;
-	background-color: rgb(127, 221, 221);
 }
 
 .container-left-col {
@@ -815,7 +823,6 @@
 
 .list-item-content-container .container-right-col {
 	width: 577px;
-	background-color: rgb(171, 210, 245);
 }
 
 /* Skillset Info Container */

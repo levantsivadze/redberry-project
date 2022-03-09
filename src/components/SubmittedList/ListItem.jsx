@@ -4,14 +4,21 @@ import ListItemContent from './ListItemContent'
 
 function ListItem({ index, itemData }) {
 	const [isActive, setIsActive] = useState(false)
+
 	console.log(itemData)
 	console.log(isActive)
 
+	const listOpenHandler = () => {
+		setIsActive(!isActive)
+	}
+
+	let imgClass = isActive ? 'imgOpen' : ''
+
 	return (
 		<li className='list-item'>
-			<div className='list-item-btn' onClick={() => setIsActive(!isActive)}>
+			<div className='list-item-btn' onClick={listOpenHandler}>
 				<span>{index}</span>
-				<img src={vectorImg} alt='Dropdown arrow' />
+				<img className={imgClass} src={vectorImg} alt='Dropdown arrow' />
 			</div>
 			{isActive && <ListItemContent itemData={itemData} />}
 		</li>

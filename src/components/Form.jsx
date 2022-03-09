@@ -14,7 +14,7 @@ function Form() {
 		first_name: '',
 		last_name: '',
 		email: '',
-		phone: 'NULL',
+		phone: '',
 		skills: [],
 		work_preference: 'from_home',
 		had_covid: false,
@@ -22,7 +22,7 @@ function Form() {
 		vaccinated: false,
 		vaccinated_at: '0001-01-01',
 		will_organize_devtalk: false,
-		devtalk_topic: 'NAN',
+		devtalk_topic: 'NULL',
 		something_special: ''
 	})
 

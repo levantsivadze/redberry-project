@@ -1,5 +1,7 @@
 import React from 'react'
 import pagImg from '../utils/images/Next.svg'
+import emptyCircle from '../utils/images/circle-empty.svg'
+import fullCircle from '../utils/images/circle-full.svg'
 import { useNavigate } from 'react-router-dom'
 function Pagination({ page, setPage, formTitles, nextPageHandler }) {
 	const navigate = useNavigate()
@@ -18,6 +20,27 @@ function Pagination({ page, setPage, formTitles, nextPageHandler }) {
 					setPage((currPage) => currPage - 1)
 				}}
 			/>
+			<input
+				type='image'
+				alt='Personal Page'
+				src={page === 0 ? fullCircle : emptyCircle}
+			/>
+			<input
+				type='image'
+				alt='Personal Page'
+				src={page === 1 ? fullCircle : emptyCircle}
+			/>
+			<input
+				type='image'
+				alt='Personal Page'
+				src={page === 2 ? fullCircle : emptyCircle}
+			/>
+			<input
+				type='image'
+				alt='Personal Page'
+				src={page === 3 ? fullCircle : emptyCircle}
+			/>
+			<input type='image' alt='Personal Page' src={emptyCircle} />
 			<input
 				type='image'
 				alt='Next Button'
