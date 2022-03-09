@@ -10,18 +10,7 @@ function Personal({ page, setPage, formTitles, formData, setFormData }) {
 		emailIsValid: true,
 		phoneNumberIsValid: true
 	})
-	console.log(`errorStatus`, errorStatus)
 
-	let pageIsValid = false
-	if (
-		errorStatus.firstNameIsValid &&
-		errorStatus.lastNameIsValid &&
-		errorStatus.emailIsValid &&
-		errorStatus.phoneNumberIsValid
-	) {
-		pageIsValid = true
-	}
-	console.log(pageIsValid)
 
 	const firstNameHandler = (e) => {
 		let input = e.target.value
@@ -72,9 +61,7 @@ function Personal({ page, setPage, formTitles, formData, setFormData }) {
 		e.preventDefault()
 		if (formData.phone.trim() === '') {
 			setFormData({ ...formData, phone: 'NULL' })
-			// delete formData.phone
 		}
-		console.log(`FormData with deleted phone`, formData)
 		validateOnSubmit(formData, errorStatus, setErrorStatus, setPage)
 	}
 

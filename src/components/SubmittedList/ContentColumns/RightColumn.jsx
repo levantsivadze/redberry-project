@@ -16,7 +16,6 @@ function RightColumn({ itemData }) {
 	const { skills, will_organize_devtalk, devtalk_topic, something_special } =
 		itemData
 
-	console.log(`skillTitles`, skillTitles)
 
 	return (
 		<div className='container-right-col'>

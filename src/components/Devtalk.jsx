@@ -9,9 +9,6 @@ function Devtalk({ formData, setFormData, page, setPage, formTitles }) {
 		special: ''
 	})
 
-	console.log('DevTalk')
-	console.log(`formData`, formData)
-
 	const isDevTalkSelected = (value) => will_organize_devtalk === value
 
 	const topicChangeHandler = (e) => {

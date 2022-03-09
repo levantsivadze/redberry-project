@@ -291,7 +291,8 @@
 	width: 455px;
 	height: 250px;
 
-	overflow-y: scroll;
+	overflow: hidden;
+
 	/* border: 1px solid #333; */
 	transition: height 200ms;
 }
@@ -661,13 +662,11 @@
 }
 .list-item-btn img {
 	margin-right: 20px;
-
 }
 .list-item-btn .imgOpen {
 	margin-right: 20px;
 	transform: rotate(-180deg);
 }
-
 
 /* List Item Content */
 
@@ -675,8 +674,7 @@
 	position: absolute;
 	width: 1154px;
 	height: auto;
-	
-	
+
 	background: #ffffff;
 	/* Redberry Red */
 

@@ -5,10 +5,8 @@ import ListItemContent from './ListItemContent'
 function ListItem({ index, itemData }) {
 	const [isActive, setIsActive] = useState(false)
 
-	console.log(itemData)
-	console.log(isActive)
 
-	const listOpenHandler = () => {
+	const listOpenHandler = (e) => {
 		setIsActive(!isActive)
 	}
 

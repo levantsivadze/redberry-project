@@ -18,7 +18,6 @@ function Covid({ formData, setFormData, page, setPage, formTitles }) {
 		vaccine: ''
 	})
 
-	console.log(`Covid.. formData`, formData)
 
 	const onPreferenceChange = (e) => {
 		setFormData({ ...formData, work_preference: e.target.value })

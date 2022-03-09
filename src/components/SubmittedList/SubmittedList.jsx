@@ -12,7 +12,6 @@ function SubmittedList() {
 			.then((res) => res.data)
 			.then((submittedData) => setDataList(submittedData))
 	}, [])
-	console.log(`dataList`, dataList)
 
 	return (
 		<div className='list-page-container'>

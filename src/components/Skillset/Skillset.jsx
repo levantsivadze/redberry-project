@@ -25,7 +25,6 @@ function Skillset({ formData, setFormData, page, setPage, formTitles }) {
 	}, [])
 
 	useEffect(() => {
-		console.log(`useEffect formattedSkills`)
 		setFormData({ ...formData, skills: skillsList })
 	}, [skillsList])
 
@@ -60,15 +59,8 @@ function Skillset({ formData, setFormData, page, setPage, formTitles }) {
 
 	const removeSkillHandler = (id) => {
 		let updatedList = skillsList.filter((skill) => skill.id !== id)
-		console.log(`filteredToRemove`, updatedList)
 		setSkillsList(updatedList)
 	}
-
-	console.log(skillOptions)
-	console.log('FormData: ', formData)
-	console.log(`Selected Skill:`, selectedOption)
-	console.log(`ExpInput: `, experienceInput)
-	console.log(`savedSkills List: `, skillsList)
 
 	const onSubmitHandler = (e) => {
 		e.preventDefault()

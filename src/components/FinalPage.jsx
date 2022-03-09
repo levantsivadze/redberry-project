@@ -5,18 +5,15 @@ import ThanksPage from './ThanksPage'
 function FinalPage({ formData, setPage }) {
 	const [isActive, setIsActive] = useState(false)
 
-	console.log('Submit')
-	console.log(`formattedData`, formData)
-
 	const submitHandler = (e) => {
 		e.preventDefault()
-
-		setIsActive(true)
 
 		axios
 			.post(`https://bootcamp-2022.devtest.ge/api/application/`, formData)
 			.then((res) => console.log(res))
 			.catch((err) => console.log(err))
+
+			setIsActive(true)
 	}
 	return (
 		<>
