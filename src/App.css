@@ -628,7 +628,7 @@
 }
 
 .list-container ul {
-	padding:0;
+	padding: 0;
 	margin: 0;
 }
 
@@ -655,4 +655,210 @@
 }
 .list-item-btn img {
 	margin-right: 20px;
+}
+
+/* List Item Content */
+
+.list-item-content-container {
+	position: absolute;
+	width: 1154px;
+	height: 1542px;
+	left: 343px;
+	top: 437px;
+
+	background: #ffffff;
+	/* Redberry Red */
+
+	border: 1px solid #fe3b1f;
+	box-sizing: border-box;
+
+	display: flex;
+}
+
+.list-item-content-container .container-left-col {
+	width: 577px;
+	background-color: rgb(127, 221, 221);
+}
+
+.container-left-col {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.container-left-col .personal-info-container {
+	width: 400px;
+	margin-left: 50px;
+	margin-top: 50px;
+	display: flex;
+	flex-direction: column;
+	justify-content: left;
+}
+.personal-info-container h3 {
+	font-family: Montserrat;
+	font-style: italic;
+	font-weight: normal;
+	font-size: 18px;
+	line-height: 22px;
+
+	text-decoration-line: underline;
+	color: #fe3b1f;
+	text-align: left;
+}
+
+.personal-info-container .personal-info {
+	margin-top: 30px;
+	display: flex;
+}
+.personal-info .left-col {
+	display: flex;
+	flex-direction: column;
+}
+.left-col span {
+	margin-bottom: 20px;
+	font-family: Montserrat;
+	font-style: italic;
+	font-weight: normal;
+	font-size: 12px;
+	line-height: 15px;
+	text-align: left;
+	color: #000000;
+}
+
+.personal-info .right-col {
+	display: flex;
+	flex-direction: column;
+}
+
+.personal-info .right-col span {
+	margin-bottom: 20px;
+	margin-left: 150px;
+
+	text-align: left;
+	font-family: Montserrat;
+	font-style: italic;
+	font-weight: normal;
+	font-size: 14px;
+	line-height: 15px;
+
+	color: #454545;
+}
+
+.covid-info-container {
+	width: 400px;
+	margin-left: 50px;
+	display: flex;
+	flex-direction: column;
+}
+.covid-info-container h3 {
+	font-family: Montserrat;
+	font-style: italic;
+	font-weight: normal;
+	font-size: 18px;
+	line-height: 22px;
+
+	text-align: left;
+	text-decoration-line: underline;
+
+	color: #fe3b1f;
+}
+.covid-info-container .covid-sector {
+	margin-bottom: 30px;
+	display: flex;
+	flex-direction: column;
+	text-align: left;
+}
+.covid-sector h4 {
+	font-family: Montserrat;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 18px;
+	line-height: 22px;
+
+	color: #000000;
+}
+.covid-sector span {
+	margin-top: 10px;
+	align-items: center;
+}
+
+.covid-sector .covid-date {
+	width: 349px;
+	height: 54px;
+
+	background: #fffcfc;
+	border: 1px solid #525557;
+	box-sizing: border-box;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.covid-date span {
+	margin-top: 0;
+	margin-left: 60px;
+	font-family: Montserrat;
+	font-style: italic;
+	font-weight: normal;
+	font-size: 14px;
+	line-height: 17px;
+
+	color: #454545;
+}
+.covid-date img {
+	margin-right: 20px;
+	width: 16px;
+	height: 18px;
+}
+
+.list-item-content-container .container-right-col {
+	width: 577px;
+	background-color: rgb(171, 210, 245);
+}
+
+.skillset-info-container {
+	width: 447px;
+	margin-left: 50px;
+	margin-top: 60px;
+	display: flex;
+	flex-direction: column;
+}
+
+.skillset-info-container h3 {
+	font-family: Montserrat;
+	font-style: italic;
+	font-weight: normal;
+	font-size: 18px;
+	line-height: 22px;
+
+	text-decoration-line: underline;
+	color: #fe3b1f;
+	text-align: left;
+}
+.skillset-info {
+	display: flex;
+	justify-content: flex-start;
+	flex-direction: column;
+	align-items: flex-start;
+}
+
+.skillset-info .skillset-item {
+	width: 447px;
+	height: 48px;
+	display: flex;
+	justify-content: flex-start;
+}
+
+.skillset-item span {
+	font-family: Montserrat;
+	font-style: italic;
+	font-weight: normal;
+	font-size: 14px;
+	line-height: 17px;
+
+	color: #000000;
+}
+
+.skillset-item span:nth-child(2){
+	margin-left: 60px;
 }

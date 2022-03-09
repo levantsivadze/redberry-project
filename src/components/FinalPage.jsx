@@ -1,25 +1,16 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
-import { useNavigate } from 'react-router-dom'
 import ThanksPage from './ThanksPage'
 
 function FinalPage({ formData, setFormData, page, setPage, formTitles }) {
 	const { phone, had_covid, vaccinated, will_organize_devtalk } = formData
 	const [isActive, setIsActive] = useState(false)
 	const [formattedData, setFormattedData] = useState(formData)
-	const navigate = useNavigate()
 
 	console.log('Submit')
 	console.log(`formattedData`, formattedData)
 
-	useEffect(() => {
-		let formattedSkills = formData.skills.map((skill) => ({
-			id: skill.id,
-			experience: skill.experience
-		}))
-		setFormattedData({ ...formData, skills: formattedSkills })
-
-	}, [])
+	
 
 	const submitHandler = (e) => {
 		e.preventDefault()

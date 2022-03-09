@@ -26,4 +26,4 @@ export const RegexConst = {
 	VALIDATE_PHONE_NUMBER: /^(?:\+995\s5[0-9_ ]{8}|)?$/
 }
 
-export const Token = '58aba00d-2d74-44ca-9a1c-38f24a2c657f'
+export const Token = 'dafa2d69-ee01-4008-a2e2-b35df62a84b4'

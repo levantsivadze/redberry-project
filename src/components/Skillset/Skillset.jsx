@@ -27,7 +27,7 @@ function Skillset({ formData, setFormData, page, setPage, formTitles }) {
 	useEffect(() => {
 		console.log(`useEffect formattedSkills`)
 		setFormData({ ...formData, skills: skillsList })
-	}, [formData, setFormData, skillsList])
+	}, [skillsList])
 
 	const experienceInputHandler = (e) => {
 		setExperienceInput(e.target.value)
@@ -64,7 +64,11 @@ function Skillset({ formData, setFormData, page, setPage, formTitles }) {
 		setSkillsList(updatedList)
 	}
 
+	console.log(skillOptions)
 	console.log('FormData: ', formData)
+	console.log(`Selected Skill:`, selectedOption)
+	console.log(`ExpInput: `, experienceInput)
+	console.log(`savedSkills List: `, skillsList)
 
 	const onSubmitHandler = (e) => {
 		e.preventDefault()
@@ -106,7 +110,7 @@ function Skillset({ formData, setFormData, page, setPage, formTitles }) {
 				page={page}
 				setPage={setPage}
 				formTitles={formTitles}
-				nextPageHandler={onSubmitHandler}
+				 nextPageHandler={onSubmitHandler}
 			/>
 		</form>
 	)
