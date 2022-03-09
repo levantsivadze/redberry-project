@@ -14,7 +14,7 @@ function Landing() {
 				<button className='questions-btn' onClick={() => navigate('form')}>
 					Start Questionnaire
 				</button>
-				<a href='_blank' className='applications-link'>
+				<a href='/list' className='applications-link'>
 					Submitted Questions
 				</a>
 				<img className='rocketman-img' src={rocketman} alt='Rocketman' />

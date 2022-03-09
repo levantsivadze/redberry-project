@@ -11,8 +11,7 @@
 }
 
 .landing-container .landing-body {
-	background: url('./utils/images/stars.png') no-repeat center
-		center fixed;
+	background: url('./utils/images/stars.png') no-repeat center center fixed;
 	background-size: cover;
 	height: 1080px;
 	overflow: hidden;
@@ -570,7 +569,6 @@
 	color: #ffffff;
 }
 
-
 /* Thanks Page */
 
 .thanks-page-container {
@@ -582,19 +580,79 @@
 
 .thanks-page-container p {
 	position: absolute;
-width: 1066px;
-height: 191px;
-left: 427px;
-top: 444px;
+	width: 1066px;
+	height: 191px;
+	left: 427px;
+	top: 444px;
 
-font-family: Rowdies;
-font-style: normal;
-font-weight: normal;
-font-size: 96px;
-line-height: 119px;
+	font-family: Rowdies;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 96px;
+	line-height: 119px;
 
+	color: #fe3b1f;
+}
 
-/* Redberry Red */
+/* Submitted List */
 
-color: #FE3B1F;
+.list-page-container {
+	position: absolute;
+	width: 1920px !important;
+	height: 100%;
+	background-color: #000000;
+}
+.list-page-container h1 {
+	position: absolute;
+	width: 1128px;
+	height: 100px;
+	left: 359px;
+	top: 94px;
+
+	font-family: Rowdies;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 56px;
+	line-height: 70px;
+
+	letter-spacing: 0.11em;
+
+	color: #ffffff;
+}
+.list-container {
+	position: absolute;
+	width: 1154px;
+	height: 600px;
+	left: 343px;
+	top: 249px;
+}
+
+.list-container ul {
+	padding:0;
+	margin: 0;
+}
+
+.list-item {
+	list-style: none;
+}
+
+.list-item-btn {
+	width: 1154px;
+	height: 52px;
+
+	margin-bottom: 20px;
+	cursor: pointer;
+	/* Redberry Red */
+	background: #fe3b1f;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	color: #fff;
+}
+
+.list-item-btn span {
+	padding-left: 10px;
+}
+.list-item-btn img {
+	margin-right: 20px;
 }
