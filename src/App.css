@@ -600,6 +600,7 @@
 	position: absolute;
 	width: 1920px !important;
 	height: 100%;
+	overflow: auto;
 	background-color: #000000;
 }
 .list-page-container h1 {
@@ -634,6 +635,8 @@
 
 .list-item {
 	list-style: none;
+	width: 1154px;
+	height: auto;
 }
 
 .list-item-btn {
@@ -662,10 +665,9 @@
 .list-item-content-container {
 	position: absolute;
 	width: 1154px;
-	height: 1542px;
-	left: 343px;
-	top: 437px;
-
+	height: auto;
+	
+	
 	background: #ffffff;
 	/* Redberry Red */
 

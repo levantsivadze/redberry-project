@@ -2,8 +2,7 @@ import React, { useState, useEffect } from 'react'
 import activeBullet from '../../../utils/images/activeBullet.png'
 import passiveBullet from '../../../utils/images/passiveBullet.png'
 
-
-function RightColumn({ listItem }) {
+function RightColumn({ itemData }) {
 	const skillTitles = [
 		'HTML',
 		'CSS',
@@ -14,21 +13,8 @@ function RightColumn({ listItem }) {
 		'Svelte',
 		'Angular'
 	]
-	const {
-		first_name,
-		last_name,
-		email,
-		phone,
-		skills,
-		work_preference,
-		had_covid,
-		had_covid_at,
-		vaccinated,
-		vaccinated_at,
-		will_organize_devtalk,
-		devtalk_topic,
-		something_special
-	} = listItem
+	const { skills, will_organize_devtalk, devtalk_topic, something_special } =
+		itemData
 
 	console.log(`skillTitles`, skillTitles)
 
@@ -65,18 +51,18 @@ function RightColumn({ listItem }) {
 						No
 					</span>
 				</div>
-        <div className="insight-sector">
-          <h4>What would you speak about at Devtalk?</h4>
-          <div className="insight-topic-area">
-            <span>{devtalk_topic}</span>
-          </div>
-        </div>
-        <div className="insight-sector">
-          <h4>Tell us somthing special</h4>
-          <div className="insight-topic-area">
-            <span>{something_special}</span>
-          </div>
-        </div>
+				<div className='insight-sector'>
+					<h4>What would you speak about at Devtalk?</h4>
+					<div className='insight-topic-area'>
+						<span>{devtalk_topic}</span>
+					</div>
+				</div>
+				<div className='insight-sector'>
+					<h4>Tell us somthing special</h4>
+					<div className='insight-topic-area'>
+						<span>{something_special}</span>
+					</div>
+				</div>
 			</div>
 		</div>
 	)

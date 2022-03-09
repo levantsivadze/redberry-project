@@ -3,7 +3,7 @@ import activeBullet from '../../../utils/images/activeBullet.png'
 import passiveBullet from '../../../utils/images/passiveBullet.png'
 import calendarIcon from '../../../utils/images/calendar.svg'
 
-function LeftColumn({ listItem }) {
+function LeftColumn({ itemData }) {
 	const {
 		first_name,
 		last_name,
@@ -14,7 +14,7 @@ function LeftColumn({ listItem }) {
 		had_covid_at,
 		vaccinated,
 		vaccinated_at
-	} = listItem
+	} = itemData
 
 	return (
 		<div className='container-left-col'>

@@ -20,12 +20,13 @@ function SubmittedList() {
 			<h1>Submitted Applications</h1>
 			<div className='list-container'>
 				<ul>
-					{dataList.map((dataItem, index) => (
-						<ListItem key={index} index={index + 1} listItem={dataItem} />
-					))}
+					{dataList.length !== 0 &&
+						dataList.map((dataItem, index) => (
+							<ListItem key={index} index={index + 1} itemData={dataItem} />
+						))}
 				</ul>
 			</div>
-			{dataList.length !== 0 && <ListItemContent listItem={dataList[0]} />}
+			{/* {dataList.length !== 0 && <ListItemContent itemData={dataList[1]} />} */}
 		</div>
 	)
 }

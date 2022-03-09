@@ -1,8 +1,10 @@
 import { useState } from 'react'
 import vectorImg from '../../utils/images/ListVector.svg'
+import ListItemContent from './ListItemContent'
 
-function ListItem({ index, listItem }) {
+function ListItem({ index, itemData }) {
 	const [isActive, setIsActive] = useState(false)
+	console.log(itemData)
 	console.log(isActive)
 
 	return (
@@ -11,6 +13,7 @@ function ListItem({ index, listItem }) {
 				<span>{index}</span>
 				<img src={vectorImg} alt='Dropdown arrow' />
 			</div>
+			{isActive && <ListItemContent itemData={itemData} />}
 		</li>
 	)
 }
