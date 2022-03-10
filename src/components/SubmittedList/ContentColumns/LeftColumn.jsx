@@ -102,7 +102,7 @@ function LeftColumn({ itemData }) {
 						No
 					</span>
 
-					{had_covid && (
+					{vaccinated && (
 						<div className='covid-sector'>
 							<h4>When did you get covid vaccine ?</h4>
 							<div className='covid-date'>
