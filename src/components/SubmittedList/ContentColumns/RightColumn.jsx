@@ -50,12 +50,12 @@ function RightColumn({ itemData }) {
 						No
 					</span>
 				</div>
-				<div className='insight-sector'>
+				{will_organize_devtalk && <div className='insight-sector'>
 					<h4>What would you speak about at Devtalk?</h4>
 					<div className='insight-topic-area'>
 						<span>{devtalk_topic}</span>
 					</div>
-				</div>
+				</div>}
 				<div className='insight-sector'>
 					<h4>Tell us somthing special</h4>
 					<div className='insight-topic-area'>
